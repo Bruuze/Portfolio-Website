@@ -1,7 +1,6 @@
 <script setup lang="ts">
-const { page } = useContent()
-
-console.log(page.value.title)
+const { page, next, prev } = useContent()
+const pageBody = useNuxtApp().$mdit.render(page.value.body)
 
 useHead({
   title: page.value.title,
@@ -18,18 +17,22 @@ useHead({
         <div>
           <ContentRenderer :key="page._slug" :value="page" />
           <p>{{page.description}}</p>
+          <div v-html="pageBody"></div>
           <!--<ContentQuery :path="$route.path" v-slot="{ data }">
               <div v-for="post of data" :key="post.slug">
                 <img class="headerImage" :src="post.thumbnail">
 
               </div>
           </ContentQuery>-->
+          <NuxtLink v-if="prev && prev._path.includes('/portfolio')" :to="prev._path">{{ prev.title }}</NuxtLink>
+          <NuxtLink v-if="next && next._path.includes('/portfolio')" :to="next._path">{{ next.title }}</NuxtLink>
         </div>
       </div>
   </section>
 </template>
 
 <script lang="ts">
+
 export default {
 
 

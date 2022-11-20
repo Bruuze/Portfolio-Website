@@ -27,7 +27,7 @@ div.loading-page-wrapper{
     padding: 12%;
   }
 
-.bounce-enter-active {
+/* .bounce-enter-active {
     animation: bounce-in .5s;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -49,7 +49,7 @@ div.loading-page-wrapper{
 @keyframes bounce-out {
     0% { opacity: 1; }
     100% { opacity: 0; }
-}
+} */
 
 *,
 *::before,

@@ -1,9 +1,6 @@
 <template>
   <div>
     <h1>Blog Posts</h1>
-    <!--<li v-for="post of posts" :key="post.slug">
-      <NuxtLink :to="post.slug">{{ post.title }}</NuxtLink>
-  </li> -->
   <ContentQuery :path="$route.path" :where="{ _type: 'json' }" v-slot="{ data }">
       <ul>
         <li v-for="post of data" :key="post.slug">

@@ -52,37 +52,3 @@
 
   </div>
 </template>
-
-
-<script>
-
-if (process.client) {
-  let iconMenu = document.querySelector('.bodymovinanim');
-
-    let animationMenu = bodymovin.loadAnimation({
-            container: iconMenu,
-            renderer: 'svg',
-            loop: false,
-            autoplay: false,
-            path: "/burger.json"
-    });
-
-    var directionMenu = 1;
-      iconMenu.addEventListener('click', (e) => {
-      animationMenu.setDirection(directionMenu);
-      animationMenu.play();
-      directionMenu = -directionMenu;
-    });
-}
-
-export default {
-  head: {
-    script: [
-      {
-        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js'
-      }
-    ]
-  }
-}
-
-</script>
