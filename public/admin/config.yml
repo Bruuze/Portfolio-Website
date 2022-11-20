@@ -11,7 +11,7 @@ collections:
     format: 'json'
     folder: "content/blog"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: true
     fields:
