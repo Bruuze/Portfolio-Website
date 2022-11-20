@@ -41,6 +41,9 @@ app: {
               src: 'https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js'
             },
             {
+              src: 'https://identity.netlify.com/v1/netlify-identity-widget.js'
+            },
+            {
               src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
             },
             {
