@@ -11,13 +11,11 @@ collections:
     format: 'json'
     folder: "content/blog"
     create: true
-    slug: "{{indexNum}}.{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: true
     fields:
-      - { name: categories, label: Categories, widget: categories, separator: __}
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Index Number", name: "indexNum", widget: "number" }
       - { label: "Meta Description", name: "meta-description", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {
