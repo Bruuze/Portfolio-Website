@@ -15,6 +15,7 @@ collections:
     editor:
       preview: true
     fields:
+      - { name: categories, label: Categories, widget: categories, separator: __}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Index Number", name: "indexNum", widget: "number" }
       - { label: "Meta Description", name: "meta-description", widget: "string" }
