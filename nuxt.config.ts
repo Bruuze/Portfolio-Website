@@ -1,12 +1,33 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
-export default defineNuxtConfig({
 
+export default defineNuxtConfig({
   build: {
     transpile: ['lottie-player']
   },
   vue: {
     compilerOptions: {
       isCustomElement: tag => ['lottie-player'].includes(tag)
+    }
+  },
+  hooks: {
+    "build:before" : () => { 
+      let i = 1;
+      const fs = require('fs');
+      function getCurrentFilenames() {
+        console.log("Current filenames:");
+        fs.readdirSync(__dirname +'/content/blog/').forEach(file => {
+          console.log(file);
+          if(!file.startsWith(".", 1)){
+            fs.rename(__dirname +'/content/blog/'+ file, __dirname +'/content/blog/'+ i +'.'+ file, () => {
+              console.log("\nFile Renamed!\n");
+              i++
+            });
+          } else {
+            i++;
+          }
+        });
+      }
+      getCurrentFilenames()
     }
   },
 /*
