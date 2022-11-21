@@ -13,6 +13,15 @@
   </body>
 
   <script>
+    const { promises: fs } = require('fs');
+    const dir = '/';
+
+    const getNumFiles = async (dir) => {
+      const files = await fs.readdir(dir)
+      console.log(files.length)
+    }
+    getNumFiles(dir)
+
     var CategoriesControl = createClass({
       handleChange: function(e) {
         const separator = this.props.field.get('separator', ', ')
