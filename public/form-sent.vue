@@ -1,14 +1,12 @@
 <template>
-  <div>
     <form
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       method="POST"
-      action="/form-sent"
       name="Contact" >
 
       <input type="hidden" name="form-name" value="Contact" />
-
+      
       <p>
         <label>Name <input type="text" name="name" /></label>
       </p>
@@ -18,7 +16,5 @@
       <p>
         <button type="submit">Send</button>
       </p>
-
-    </form>
-  </div>
+</form>
 </template>
