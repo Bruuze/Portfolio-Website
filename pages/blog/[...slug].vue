@@ -9,7 +9,6 @@ const pageBody = useNuxtApp().$mdit.render(page.value.body)
         <TopNavBlog/>
         <div v-html="pageBody"></div>
         <LatestBlogs />
-        <Form />
       </div>
   </section>
 </template>
