@@ -2,8 +2,6 @@
   <div>
     <form
       netlify
-      action="/"
-      method="POST"
       name="Contact" >
 
       <input type="hidden" name="form-name" value="Contact" />
@@ -12,6 +10,9 @@
       </p>
       <p>
         <label>Email <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
       </p>
 
     </form>
@@ -25,7 +26,7 @@ const handleSubmit = (event) => {
   const myForm = event.target;
   const formData = new FormData(myForm);
   
-  fetch("/", {
+  fetch("/form", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
