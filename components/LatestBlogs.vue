@@ -1,15 +1,30 @@
-<script setup lang="ts">
-const blogUrl = "/blog"
+<script setup>
+const route = useRoute()
+var postIndex = 0
+var thisPostIndex = 0
+const { data: posts } = await useAsyncData('posts-list', () => queryContent('/blog').sort({ date: -1 }).find())
+for (const post of posts._rawValue) { 
+    console.log(post.title)
+    console.log(postIndex)
+    if(post._path == route.path){
+        thisPostIndex = postIndex
+        console.log('this post is ' + thisPostIndex)
+    }
+    postIndex++
+}
+const previousPost = posts._rawValue[thisPostIndex - 1]
+const nextPost = posts._rawValue[thisPostIndex + 1]
 </script>
 
 <template>
-    <ContentQuery :path="blogUrl" :where="{ _type: 'json' }" v-slot="{ data }" :sort="{locale: true, numeric: true, caseFirst: 'upper'}">
-        {{data}}
-        <!-- <li>
-            {{Object.values(data)[0].title}}
-        </li>
-        <li>
-            {{Object.values(data)[1].title}}
-        </li> -->
-    </ContentQuery>
+    <NuxtLink v-if="thisPostIndex != 0" :to="previousPost._path">
+        {{ previousPost.title }}
+    </NuxtLink><br/>
+    <NuxtLink v-if="thisPostIndex != postIndex - 1" :to="nextPost._path">
+        {{ nextPost.title }}
+    </NuxtLink>
 </template>
+
+<script>
+
+</script>

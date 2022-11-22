@@ -9,27 +9,27 @@ export default defineNuxtConfig({
       isCustomElement: tag => ['lottie-player'].includes(tag)
     }
   },
-  hooks: {
-    "build:before" : () => { 
-      let i = 1;
-      const fs = require('fs');
-      function getCurrentFilenames() {
-        console.log("Current filenames:");
-        fs.readdirSync(__dirname +'/content/blog/').forEach(file => {
-          console.log(file);
-          if(!file.startsWith(".", 1)){
-            fs.rename(__dirname +'/content/blog/'+ file, __dirname +'/content/blog/'+ i +'.'+ file, () => {
-              console.log("\nFile Renamed!\n");
-              i++
-            });
-          } else {
-            i++;
-          }
-        });
-      }
-      getCurrentFilenames()
-    }
-  },
+  // hooks: {
+  //   "build:before" : () => { 
+  //     let i = 1;
+  //     const fs = require('fs');
+  //     function getCurrentFilenames() {
+  //       console.log("Current filenames:");
+  //       fs.readdirSync(__dirname +'/content/blog/').forEach(file => {
+  //         console.log(file);
+  //         if(!file.startsWith(".", 1)){
+  //           fs.rename(__dirname +'/content/blog/'+ file, __dirname +'/content/blog/'+ i +'.'+ file, () => {
+  //             console.log("\nFile Renamed!\n");
+  //             i++
+  //           });
+  //         } else {
+  //           i++;
+  //         }
+  //       });
+  //     }
+  //     getCurrentFilenames()
+  //   }
+  // },
 /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode

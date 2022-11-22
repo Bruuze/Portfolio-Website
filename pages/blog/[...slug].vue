@@ -1,5 +1,4 @@
-<script setup lang="ts">
-const { page, next, prev } = useContent()
+<script setup>
 </script>
 <template>
 
@@ -8,11 +7,6 @@ const { page, next, prev } = useContent()
             <ul>
               <LatestBlogs/>
             </ul>
-            <NuxtLink v-if="prev && prev._path.includes('/blog')" :to="prev._path">{{ prev.title }}</NuxtLink>
-            <NuxtLink v-if="next && next._path.includes('/blog')" :to="next._path">{{ next.title }}</NuxtLink>
       </div>
   </section>
 </template>
-
-<script lang="ts">
-</script>
