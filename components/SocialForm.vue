@@ -4,7 +4,7 @@
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       method="POST"
-      action="/contactform"
+      action="/pages/submission"
       name="Contact" >
 
       <input type="hidden" name="form-name" value="Contact" />
