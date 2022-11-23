@@ -11,7 +11,7 @@
     >
       <input type="hidden" name="form-name" value="subscribe">
       <input type="email" name="email" required>
-      <button>Submit</button>
+      <button @click="onFormSubmit">Submit</button>
     </form>
   </div>
 </template>
@@ -19,6 +19,7 @@
 
 <script>
 const onFormSubmit = (e) => {
+  console.log('worked');
   let myForm = document.getElementById("subscribe");
   let formData = new FormData(myForm);
   fetch("/", {
@@ -26,7 +27,7 @@ const onFormSubmit = (e) => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
   })
-  .then(console.log(result))
+  .then(console.log(r))
   .catch((error) => console.log(error));
 }
 </script>
