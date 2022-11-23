@@ -22,7 +22,6 @@
 export default{
   methods: {
     formSubmit() {
-      console.log('worked');
       let myForm = document.getElementById("subscribe");
       let formData = new FormData(myForm);
       fetch("/", {
