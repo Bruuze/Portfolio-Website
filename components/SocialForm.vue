@@ -1,18 +1,18 @@
 <template>
   <div>
     <form 
-      id="subscribe"
-      name="subscribe" 
-      method="post" 
-      netlify
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={{onFormSubmit}}
-    >
-      <input type="hidden" name="form-name" value="subscribe">
-      <input type="email" name="email" required>
-      <button type="submit">Submit</button>
-    </form>
+  id="subscribe"
+  name="subscribe" 
+  method="post" 
+  netlify 
+  netlify-honeypot="bot-field" 
+  data-netlify="true" 
+  @submit.prevent="onFormSubmit"
+>
+  <input type="hidden" name="form-name" value="subscribe">
+  <input type="email" name="email" required>
+  <button>Submit</button>
+</form>
   </div>
 </template>
 
