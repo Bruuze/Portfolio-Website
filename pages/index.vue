@@ -20,7 +20,7 @@
         <div class="container">
           <div class="home__row flex--row-reverse">
             <div class="home__col home__col-2 flex flex--align-v-center">
-              <div class="embed__container"><iframe src="https://www.youtube.com/embed/5ikqcWz7j-U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" class="embed"></iframe></div>
+              <div class="embed__container"><iframe src="https://www.youtube-nocookie.com/embed/5ikqcWz7j-U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" class="embed"></iframe></div>
             </div>
             <div class="home__col home__col-2 flex flex--align-v-center">
 
