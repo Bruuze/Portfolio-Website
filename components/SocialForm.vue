@@ -7,7 +7,7 @@
       netlify
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      @submit.prevent="onFormSubmit"
+      onSubmit={{onFormSubmit}}
     >
       <input type="hidden" name="form-name" value="subscribe">
       <input type="email" name="email" required>
