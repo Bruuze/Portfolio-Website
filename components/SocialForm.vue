@@ -29,7 +29,11 @@ export default{
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       })
-      .then(console.log('it worked'))
+      .then(document.getElementById('subscribe').innerHTML= `
+            <div>
+                Thank you! I received your submission.
+            </div>
+            `)
       .catch((error) => console.log(error));
     }
   }
