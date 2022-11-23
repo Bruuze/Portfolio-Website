@@ -1,49 +1,32 @@
 <template>
   <div>
-    <form
-      id="myForm"
+    <form 
+      id="subscribe"
+      name="subscribe" 
+      method="post" 
+      netlify
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      method="POST"
-      name="Contact" 
-      onSubmit={{handleSubmit}}>
-
-      <input type="hidden" name="form-name" value="Contact" />
-
-      <p>
-        <label>Name <input type="text" name="name" /></label>
-      </p>
-      <p>
-        <label>Email <input type="email" name="email" /></label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-
+      @submit.prevent="onFormSubmit"
+    >
+      <input type="hidden" name="form-name" value="subscribe">
+      <input type="email" name="email" required>
+      <button>Submit</button>
     </form>
   </div>
 </template>
 
-<script>
-function encode(data) {
-  return Object.keys(data)
-    .map(
-      (key) =>
-        encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-    )
-    .join("&");
-}
 
-const handleSubmit = (event) => {
-  event.preventDefault();
+<script>
+const onFormSubmit = (e) => {
+  let myForm = document.getElementById("subscribe");
+  let formData = new FormData(myForm);
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({
-      "form-name": event.target.getAttribute("name"),
-      ...name,
-    }),
+    body: new URLSearchParams(formData).toString(),
   })
-    .catch((error) => alert(error));
-};
+  .then(result => showThanks.value = true)
+  .catch((error) => console.log(error));
+}
 </script>
