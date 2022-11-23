@@ -11,7 +11,7 @@
     >
       <input type="hidden" name="form-name" value="subscribe">
       <input type="email" name="email" required>
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </div>
 </template>
