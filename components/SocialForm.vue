@@ -7,10 +7,11 @@
       netlify 
       netlify-honeypot="bot-field" 
       data-netlify="true" 
-      @submit.prevent="incrementCounter"
+      @submit.prevent="formSubmit"
     >
       <input type="hidden" name="form-name" value="subscribe">
       <input type="email" name="email" required>
+      <input type="text" name="testing">
       <button>Submit</button>
     </form>
   </div>
@@ -20,7 +21,7 @@
 <script>
 export default{
   methods: {
-    incrementCounter() {
+    formSubmit() {
       console.log('worked');
       let myForm = document.getElementById("subscribe");
       let formData = new FormData(myForm);
