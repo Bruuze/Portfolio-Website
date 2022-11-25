@@ -68,7 +68,7 @@ collections:
             - { label: "Name", name: "name", widget: "string", required: true }
             - { label: "Video URL", name: "videoURL", widget: "string", required: true }
             - { label: "Tag", name: "tag", widget: "select", options: ["graphics", "alerts"], required: true }
-          }
+        }
 
   - name: "onscreen"
     label: "Onscreen"
