@@ -11,7 +11,7 @@ collections:
     format: 'json'
     folder: "content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     editor:
       preview: true
     fields:
@@ -59,6 +59,15 @@ collections:
         }
         
       - { label: "Body", name: "body", widget: "markdown" }
+
+      - {label: "Interactive Preview",
+        name: "interactivePreview",
+        widget: "list",
+        summary: '{{fields.name}}',
+        fields: - {label: Name, name: name, widget: string, required: true}
+                - {label: Video URL, name: videoURL, widget: string, required: true}
+                - {label: "Tag", name: "tag", widget: "select", options: ["graphics", "alerts"], required: true}
+        }
 
   - name: "onscreen"
     label: "Onscreen"
