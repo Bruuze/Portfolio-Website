@@ -1,6 +1,6 @@
 <template>
     <video-player
-      class="video-player vjs-custom-theme"
+      class="video-player vjs-custom-theme vjs-theme-city"
       :src="url"
       crossorigin="anonymous"
       playsinline

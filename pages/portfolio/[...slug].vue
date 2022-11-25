@@ -45,117 +45,146 @@ export default{
 </script>
 
 <style>
-.vjs-loading-spinner {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -25px 0 0 -25px;
-  opacity: 0.85;
-  text-align: left;
-  border: 6px solid rgba(43, 51, 63, 0.7);
-  box-sizing: border-box;
-  background-clip: padding-box;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  visibility: hidden;
+.vjs-theme-city {
+  --vjs-theme-city--primary: #bf3b4d;
+  --vjs-theme-city--secondary: #fff
 }
 
-.vjs-seeking .vjs-loading-spinner,
-.vjs-waiting .vjs-loading-spinner {
-  display: block;
-  -webkit-animation: vjs-spinner-show 0s linear 0.3s forwards;
-          animation: vjs-spinner-show 0s linear 0.3s forwards;
+.vjs-theme-city .vjs-control-bar {
+  height: 70px;
+  padding-top: 20px;
+  background: none;
+  background-image: linear-gradient(0deg, #000, transparent)
 }
 
-.vjs-loading-spinner:before,
-.vjs-loading-spinner:after {
-  content: "";
+.vjs-theme-city .vjs-button>.vjs-icon-placeholder:before {
+  line-height: 50px
+}
+
+.vjs-theme-city .vjs-play-progress:before {
+  display: none
+}
+
+.vjs-theme-city .vjs-progress-control {
   position: absolute;
-  margin: -6px;
-  box-sizing: inherit;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 20px
+}
+
+.vjs-theme-city .vjs-progress-control .vjs-progress-holder {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin: 0
+}
+
+.vjs-theme-city .vjs-play-progress {
+  background-color: var(--vjs-theme-city--primary)
+}
+
+.vjs-theme-city .vjs-remaining-time {
+  order: 1;
+  line-height: 50px;
+  flex: 3;
+  text-align: left
+}
+
+.vjs-theme-city .vjs-play-control {
+  order: 2;
+  flex: 8;
+  font-size: 1.75em
+}
+
+.vjs-theme-city .vjs-fullscreen-control,
+.vjs-theme-city .vjs-picture-in-picture-control,
+.vjs-theme-city .vjs-volume-panel {
+  order: 3;
+  flex: 1
+}
+
+.vjs-theme-city .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal {
+  height: 100%
+}
+
+.vjs-theme-city .vjs-mute-control {
+  display: none
+}
+
+.vjs-theme-city .vjs-volume-panel {
+  margin-left: .5em;
+  margin-right: .5em;
+  padding-top: 1.5em
+}
+
+.vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal,
+.vjs-theme-city .vjs-volume-panel,
+.vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
+.vjs-theme-city .vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal,
+.vjs-theme-city .vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal,
+.vjs-theme-city .vjs-volume-panel:hover,
+.vjs-theme-city .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal {
+  width: 3em
+}
+
+.vjs-theme-city .vjs-volume-level:before {
+  font-size: 1em
+}
+
+.vjs-theme-city .vjs-volume-panel .vjs-volume-control {
   opacity: 1;
-  border: inherit;
-  border-color: transparent;
-  border-top-color: white;
+  width: 100%;
+  height: 100%
 }
 
-.vjs-seeking .vjs-loading-spinner:before,
-.vjs-seeking .vjs-loading-spinner:after,
-.vjs-waiting .vjs-loading-spinner:before,
-.vjs-waiting .vjs-loading-spinner:after {
-  -webkit-animation: vjs-spinner-spin 1.1s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, vjs-spinner-fade 1.1s linear infinite;
-  animation: vjs-spinner-spin 1.1s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, vjs-spinner-fade 1.1s linear infinite;
+.vjs-theme-city .vjs-volume-bar {
+  background-color: transparent;
+  margin: 0
 }
 
-.vjs-seeking .vjs-loading-spinner:before,
-.vjs-waiting .vjs-loading-spinner:before {
-  border-top-color: white;
+.vjs-theme-city .vjs-slider-horizontal .vjs-volume-level {
+  height: 100%
 }
 
-.vjs-seeking .vjs-loading-spinner:after,
-.vjs-waiting .vjs-loading-spinner:after {
-  border-top-color: white;
-  -webkit-animation-delay: 0.44s;
-  animation-delay: 0.44s;
+.vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%
 }
 
-@keyframes vjs-spinner-show {
-  to {
-    visibility: visible;
-  }
+.vjs-theme-city .vjs-volume-bar:before {
+  content: "";
+  z-index: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-color: transparent transparent hsla(0, 0%, 100%, .25);
+  border-style: solid;
+  border-width: 0 0 1.75em 3em
 }
-@-webkit-keyframes vjs-spinner-show {
-  to {
-    visibility: visible;
-  }
+
+.vjs-theme-city .vjs-volume-level {
+  overflow: hidden;
+  background-color: transparent
 }
-@keyframes vjs-spinner-spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes vjs-spinner-spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes vjs-spinner-fade {
-  0% {
-    border-top-color: #73859f;
-  }
-  20% {
-    border-top-color: #73859f;
-  }
-  35% {
-    border-top-color: white;
-  }
-  60% {
-    border-top-color: #73859f;
-  }
-  100% {
-    border-top-color: #73859f;
-  }
-}
-@-webkit-keyframes vjs-spinner-fade {
-  0% {
-    border-top-color: #73859f;
-  }
-  20% {
-    border-top-color: #73859f;
-  }
-  35% {
-    border-top-color: white;
-  }
-  60% {
-    border-top-color: #73859f;
-  }
-  100% {
-    border-top-color: #73859f;
-  }
+
+.vjs-theme-city .vjs-volume-level:before {
+  content: "";
+  z-index: 1;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 3em solid transparent;
+  border-bottom: 1.75em solid var(--vjs-theme-city--secondary);
+  border-right: 0 solid transparent;
+  border-top: 0 solid transparent
 }
 </style>
