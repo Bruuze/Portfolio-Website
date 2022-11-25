@@ -1,0 +1,25 @@
+{
+  "date": "2022-11-25T00:51:49.942Z",
+  "title": "Portfolio Project",
+  "meta-description": "Portfolio Project",
+  "thumbnail": "/img/punished-ted-cruz.gif",
+  "social": "/img/epdgdf7veam2qtt.jpg",
+  "body": "**T﻿esting Body**\n\n![](/img/200_d.gif)",
+  "interactivePreview": [
+    {
+      "name": "Testing Video 1",
+      "tag": "graphics",
+      "videoURL": "https://www.youtube.com/watch?v=6oKsahsDkgA&t=669s"
+    },
+    {
+      "name": "Testing Video 2",
+      "videoURL": "https://www.youtube.com/watch?v=KrBPo8pSth8",
+      "tag": "graphics"
+    },
+    {
+      "name": "Testing Alert",
+      "tag": "alerts",
+      "videoURL": "https://www.youtube.com/watch?v=WK3H85ILgF4"
+    }
+  ]
+}
