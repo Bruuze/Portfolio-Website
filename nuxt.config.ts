@@ -107,6 +107,7 @@ app: {
 
   modules: [
     '@nuxt/content',
+    '@nuxt/image-edge',
   ],
 
   content: {
@@ -265,4 +266,5 @@ app: {
       })
     }
   },*/
+  
 })

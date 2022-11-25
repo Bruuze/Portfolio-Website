@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: public/img
+media_folder: public/uploads
 public_folder: /img
 
 collections:
@@ -66,7 +66,7 @@ collections:
           summary: '{{fields.name}}'
           fields: 
             - { label: "Name", name: "name", widget: "string", required: true }
-            - { label: "Video URL", name: "videoURL", widget: "string", required: true }
+            - { label: "Video", name: "video", widget: "file", required: true }
             - { label: "Tag", name: "tag", widget: "select", options: ["graphics", "alerts"], required: true }
 
   - name: "onscreen"
