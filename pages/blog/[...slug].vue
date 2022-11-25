@@ -1,6 +1,13 @@
 <script setup>
 const { page } = useContent()
 const pageBody = useNuxtApp().$mdit.render(page.value.body)
+
+useHead({
+  title: page.value.title,
+  meta: [
+    { name: 'description', content: 'My amazing site.' }
+  ],
+})
 </script>
 <template>
 
