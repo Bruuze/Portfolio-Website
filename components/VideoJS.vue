@@ -1,10 +1,12 @@
 <template>
     <video-player
-      class="video-player vjs-big-play-centered"
+      class="video-player vjs-custom-theme"
       :src="url"
       crossorigin="anonymous"
       playsinline
       autoplay
+      loop
+      :width="600"
       @mounted="handleMounted"
       @ready="handleEvent($event)"
       @play="handleEvent($event)"
@@ -35,10 +37,10 @@
         const player = shallowRef<VideoJsPlayer>()
         const handleMounted = (payload: any) => {
           player.value = payload.player
-          console.log('Basic player mounted', payload)
+          //console.log('Basic player mounted', payload)
         }
         const handleEvent = (log: any) => {
-          console.log('Basic player event', log)
+          //console.log('Basic player event', log)
         }
         return { player, handleMounted, handleEvent }
       },

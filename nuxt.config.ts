@@ -55,7 +55,7 @@ app: {
             {
               src: '/main.js'
             },
-          ]
+          ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     
