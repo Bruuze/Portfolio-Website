@@ -9,17 +9,8 @@
     {
       "name": "Testing Video 1",
       "tag": "graphics",
-      "videoURL": "https://www.youtube.com/watch?v=6oKsahsDkgA&t=669s"
-    },
-    {
-      "name": "Testing Video 2",
-      "videoURL": "https://www.youtube.com/watch?v=KrBPo8pSth8",
-      "tag": "graphics"
-    },
-    {
-      "name": "Testing Alert",
-      "tag": "alerts",
-      "videoURL": "https://www.youtube.com/watch?v=WK3H85ILgF4"
+      "videoURL": "https://www.youtube.com/watch?v=6oKsahsDkgA&t=669s",
+      "video": "public/uploads/endingnow.mp4"
     }
   ]
 }
