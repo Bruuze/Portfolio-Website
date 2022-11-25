@@ -2,7 +2,7 @@
   "date": "2022-09-20T05:33:42.095Z",
   "title": "Newish",
   "meta-description": "testing",
-  "body": "T﻿esting but in Markdown\n\n![](/img/200_d.gif)",
-  "thumbnail": "/img/200_d.gif",
-  "social": "/img/shrike.png"
+  "body": "T﻿esting but in Markdown\n\n![](/uploads/200_d.gif)",
+  "thumbnail": "/uploads/200_d.gif",
+  "social": "/uploads/shrike.png"
 }

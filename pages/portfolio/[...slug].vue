@@ -18,11 +18,11 @@ useHead({
         <div oncontextmenu="return false;" v-html="pageBody"></div>
         <div v-for="preview in page.interactivePreview">
           <h3>{{preview.name}}</h3>
-          <p>{{preview.videoURL}}</p>
+          <p>{{preview.video}}</p>
           <i>{{preview.tag}}</i>
+          <LazyVideoJS :url="'https://marvelous-hotteok-361980.netlify.app/' + preview.video" v-if="show"/>
         </div>
         <button @click="showVideo()">Show Video</button>
-        <LazyVideoJS url="http://localhost:3000/video/BeRightBack.mp4" v-if="show"/>
         <LatestWork />
         <SocialForm />
       </div>
