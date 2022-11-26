@@ -1,23 +1,28 @@
 <template>
     <video-player
-      class="video-player vjs-custom-theme vjs-theme-city"
-      :src="url"
-      crossorigin="anonymous"
-      playsinline
-      autoplay
-      loop
-      :width="600"
-      @mounted="handleMounted"
-      @ready="handleEvent($event)"
-      @play="handleEvent($event)"
-      @pause="handleEvent($event)"
-      @ended="handleEvent($event)"
-      @loadeddata="handleEvent($event)"
-      @waiting="handleEvent($event)"
-      @playing="handleEvent($event)"
-      @canplay="handleEvent($event)"
-      @canplaythrough="handleEvent($event)"
-      @timeupdate="handleEvent(player?.currentTime())"
+    id="CustomVideoPlayer"
+    class="video-player vjs-theme-forest"
+    crossorigin="anonymous"
+    playsinline
+    controls
+    :src = "url"
+    :height="320"
+    :volume="0.4"
+    :children="[
+      // custom Video.js children component
+      // https://videojs.com/guides/options/#children
+      'mediaLoader',
+      'posterImage',
+      'bigPlayButton',
+      'loadingSpinner',
+      'controlBar',
+      'textTrackDisplay'
+    ]"
+    :control-bar="{
+      // custom Video.js control bar component
+      // https://videojs.com/guides/options/#componentname
+      volumePanel: false
+    }"
     />
   </template>
 
@@ -26,6 +31,7 @@
     import { VideoJsPlayer } from 'video.js'
     import { VideoPlayer } from '@videojs-player/vue'
     import 'video.js/dist/video-js.css'
+    import '@videojs/themes/dist/city/index.css'
     export default defineComponent({
       name: 'vue-basic-player-example',
       title: 'Basic player (Vue)',
