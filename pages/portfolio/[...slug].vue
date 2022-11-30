@@ -75,5 +75,6 @@ export default{
     /* I just copied the same animation as in the default css file */
     -webkit-animation: vjs-spinner-spin 1.1s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, vjs-spinner-fade 1.1s linear infinite;
     animation: vjs-spinner-spin 1.1s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, vjs-spinner-fade 1.1s linear infinite;
+    border-top-color: #f75ec8 !important;
 }
 </style>
