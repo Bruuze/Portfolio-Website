@@ -25,8 +25,14 @@ export default {
   mounted() {
     this.player = videojs(this.$refs.videoPlayer, this.options, () => {
       this.player.log('onPlayerReady', this);
-      $(".video-js").removeClass( "vjs-custom-waiting" )
     });
+    this.player.on("progress",function(){
+      console.log('hello')
+    }).on("play",function(){
+      // Ensure that bufferPause is reset
+      console.log('hello Again')
+      $(".video-js").removeClass( "vjs-custom-waiting" )
+});
   },
   beforeDestroy() {
     if (this.player) {
